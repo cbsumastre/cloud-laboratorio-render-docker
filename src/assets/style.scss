@@ -1,0 +1,164 @@
+// @use 'themes/theme1.scss' as *;
+// @use 'themes/theme2.scss' as *;
+@use 'themes/theme3.scss' as *;
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background-color: $background-color;
+  font-family: 'Jost', sans-serif;
+}
+
+.container {
+  width: 600px;
+  border-radius: 8px;
+  padding: 20px;
+
+  header {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  .input-group {
+    width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+
+    input[type='text'] {
+      flex-grow: 1;
+      padding: 10px;
+      border: 1px solid $border-color;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: $color-primary;
+      color: $color-white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-left: 5px;
+    }
+  }
+
+  .search {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: flex-end;
+
+    input[type='text'] {
+      flex-grow: 0.1;
+      padding: 8px 12px;
+      margin: 0 5px;
+      border: 1px solid $border-color;
+      border-radius: 4px;
+    }
+  }
+
+  .filters {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+
+    button {
+      cursor: pointer;
+      padding: 8px 12px;
+      margin: 0 5px;
+      border: 1px solid $border-color;
+      border-radius: 4px;
+      color: $color-secondary;
+
+      &.selected {
+        background-color: $color-primary;
+        color: $color-white;
+      }
+    }
+  }
+
+  .taskList {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      border-bottom: 1px solid $border-color;
+
+      .taskItem {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        input[type='text'] {
+          padding: 8px 12px;
+          margin: 0 5px;
+          background-color: $background-color;
+          border: none;
+          outline: none;
+          width: 80%;
+        }
+
+        .completed {
+          text-decoration: line-through;
+        }
+
+        input[type='checkbox'] {
+          margin-right: 10px;
+          cursor: pointer;
+        }
+
+        .taskItemButtons {
+          display: flex;
+          justify-content: flex-end;
+
+          button {
+            cursor: pointer;
+            padding: 8px 12px;
+            margin: 0 5px;
+            border: 1px solid $border-color;
+            border-radius: 4px;
+          }
+
+          .danger {
+            color: $color-danger;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+
+    .input-group {
+      flex-direction: column;
+
+      button {
+        margin-left: 0;
+        margin-top: 5px;
+      }
+    }
+
+    .search {
+      input[type='text'] {
+        flex: 1;
+      }
+    }
+
+    .filters {
+      button {
+        width: 100%;
+      }
+    }
+  }
+}
