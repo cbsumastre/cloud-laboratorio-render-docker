@@ -194,3 +194,6 @@ CMD ["node","index.js"]
   ![configuracion1](./snapshot/snapshot1.png)
   ![configuracion2](./snapshot/snapshot2.png)
   ![configuracion3](./snapshot/snapshot3.png)
+
+- Aplicación desplegada con Dockerfile en Render:
+  [https://cloud-laboratorio-render-docker.onrender.com/](https://cloud-laboratorio-render-docker.onrender.com/)
