@@ -2,8 +2,10 @@
 import express from "express"
 import path from "node:path"
 
+const STATIC_FILES_PATH = process.env.STATIC_FILES_PATH || "./app"
+
 const app = express()
-const staticFilesPath = path.resolve(process.cwd(), './app');
+const staticFilesPath = path.resolve(process.cwd(), STATIC_FILES_PATH);
 app.use('/', express.static(staticFilesPath));
 
 app.get(/(.*)/, (_req, res) => {
