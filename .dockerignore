@@ -1,0 +1,16 @@
+.github
+node_modules
+dist
+.editorconfig
+.gitignore
+.prettierrc.json
+.env.development
+.git
+snapshot
+Dockerfile
+.gitattributes
+public
+.dockerignore
+README.md
+.vscode
+.devcontainer
